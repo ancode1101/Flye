@@ -50,20 +50,18 @@ $(document).ready(function() {
     });
 
     // Hover synchronization for images and dots
-    document.addEventListener('DOMContentLoaded', function() {
-        const imageContainers = document.querySelectorAll('.image-container');
-        const dots = document.querySelectorAll('.dot');
+    const imageContainers = document.querySelectorAll('.image-container');
+    const dots = document.querySelectorAll('.dot');
 
-        imageContainers.forEach(container => {
-            container.addEventListener('mouseover', function() {
-                const index = container.getAttribute('data-index');
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[index].classList.add('active');
-            });
+    imageContainers.forEach(container => {
+        container.addEventListener('mouseover', function() {
+            const index = container.getAttribute('data-index');
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        });
 
-            container.addEventListener('mouseout', function() {
-                dots.forEach(dot => dot.classList.remove('active'));
-            });
+        container.addEventListener('mouseout', function() {
+            dots.forEach(dot => dot.classList.remove('active'));
         });
     });
 });
